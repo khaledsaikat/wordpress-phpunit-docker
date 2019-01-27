@@ -1,7 +1,6 @@
 version: '3.1'
 
 services:
-
     wordpress:
         build:
             context: .
@@ -9,13 +8,13 @@ services:
             - db
         volumes: # Map from a loacal directory
             - ./plugins:/var/www/html/wp-content/plugins
+            #- /plugin-directory-of-host-machine:/var/www/html/wp-content/plugins/my-plugin
         restart: always
         environment:
             WORDPRESS_DB_HOST: db:3306
             WORDPRESS_DB_NAME: wordpress
             WORDPRESS_DB_USER: wordpress
             WORDPRESS_DB_PASSWORD: wordpress
-
     db:
         # mysql/mysql-server is less in size than mysql
         # mysql-server:8.0 is not working by default

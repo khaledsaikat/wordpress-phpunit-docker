@@ -4,8 +4,7 @@ FROM wordpress:php7.2-fpm-alpine
 # Installing dependencies
 RUN apk add --no-cache subversion
 
-
-# Installing phpunit-7
+# Installing phpunit
 RUN wget -O phpunit https://phar.phpunit.de/phpunit-6.phar && \
     chmod +x phpunit && \
     mv phpunit /usr/local/bin/phpunit
